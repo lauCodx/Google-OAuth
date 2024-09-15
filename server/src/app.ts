@@ -1,4 +1,5 @@
 import express from "express"
+import errorHandler from "./middleware/error.handler";
 require('dotenv').config();
 
 const app = express();
@@ -8,3 +9,4 @@ app.listen(port, () =>{
     console.log ('App listening to PORT:', port)
 })
 
+app.use(errorHandler)
